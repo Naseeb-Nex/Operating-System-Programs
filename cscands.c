@@ -14,20 +14,20 @@ int main()
     {
         scanf("%d", &req[i]);
     }
-    int min = req[0], prediff, mindiff=head;
+    int min = req[0], prediff, mindiff=head, sl;
     for (int i = 0; i < n; i++)
     {
         if (head > req[i])
         {
             diff= head - req[i];
             if(mindiff> diff){
-                prediff = mindiff;
                 mindiff = diff;
+                sl = req[i];
             }
         }
     }
 
-    int tst = (s-1) - head + (s-1) - small;
+    int tst = (s-1) - head + (s-1) + sl;
     printf("Total seektime : %d", tst);
     
     return 0;
